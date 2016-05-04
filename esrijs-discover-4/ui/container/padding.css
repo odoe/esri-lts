@@ -1,0 +1,21 @@
+html,
+body,
+#viewDiv {
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.highlight-ui {
+  background-color: rgba(255,255,255,0.5);
+}
+
+#infoDiv {
+  position: absolute;
+  top: 95px;
+  right: 10px;
+  bottom: 30px;
+  width: 250px;
+  background-color: rgba(0,255,255,0.5);
+}

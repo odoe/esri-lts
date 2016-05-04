@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>New Popup - custom actions</title>
+
+  <link rel="stylesheet" href="https://js.arcgis.com/4.0/esri/css/main.css">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="../../commons/css/style-rene.css">
+  <link rel="stylesheet" href="../../commons/libs/codemirror/codemirror.css">
+  <link rel="stylesheet" href="../../commons/libs/codemirror/monokai.css">
+  <script src="../../commons/libs/codemirror/codemirror.js"></script>
+  <script src="../../commons/libs/codemirror/mode/javascript/javascript.js"></script>
+  <script src="https://js.arcgis.com/4.0/"></script>
+</head>
+
+<body class="light">
+  <div class="application">
+    <div id="viewDiv">
+    <div class="applicationBar rougerose">
+      <div class="content">
+        <div class="cartouche">
+          <span class="label">4.0</span>
+        </div>
+        <div class="main">
+          <span class="title">New Popup</span>
+        </div>
+      </div>
+      <button class="showcode ui-button">code</button>
+    </div>
+
+      <div id="code" class="code manual left shadowed" style="width: 800px;">
+        <textarea id="codemirror">
+featureLayer = new FeatureLayer({
+  ...
+  // add a custom action
+  popupTemplate: {
+    title: '{Name}',
+    content: '{*}',
+    actions: [{
+        id: 'find-brewery',
+        className: 'esri-icon-description',
+        title: 'Brewery Info'
+    }]
+  }
+});
+popup.viewModel.on('trigger-action', function (evt) {
+  if (evt.action.id === 'find-brewery') {
+    // check if URL available
+    if (url) {
+      window.open('//' + url.trim());
+    } else {
+      window.open('https://www.google.com/search?q=' + attributes.Name);
+    }
+  } else if (evt.action.id === 'zoom-out') {
+    view.animateTo({
+      center: view.center,
+      zoom: view.zoom - 2
+    });
+  }
+});
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <script src="../../commons/codestuff.js"></script>
+  <script src="main.js"></script>
+  <script>
+    [7,8,9,10,11,15,16,17,18,19,20,21,22,23,24,25,26,27].map(highlightLine);
+  </script>
+</body>
+
+</html>
