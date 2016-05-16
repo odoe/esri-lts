@@ -19,6 +19,7 @@ body,
 }
 
 .esri-popup .esri-popup-main,
+.esri-popup .esri-popup-main a,
 .esri-popup .esri-pointer .esri-pointer-direction,
 .esri-widget .esri-header,
 .esri-widget, .esri-widget-button,

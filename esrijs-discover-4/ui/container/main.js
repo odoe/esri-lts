@@ -15,7 +15,7 @@ require([
   VectorTileLayer,
   FeatureLayer,
   PopupTemplate,
-  MapView,
+  SceneView,
   Search,
   Legend,
   Home,
@@ -44,7 +44,7 @@ require([
       layers: [fLayer]
     });
 
-    var view = new MapView({
+    var view = new SceneView({
       camera: {
         position: [-118.093, 34.381, 10000],
         tilt: 65
@@ -56,7 +56,7 @@ require([
         components: ["zoom", "attribution", "compass"]
       },
       padding: {
-        //top: 80
+        top: 80
       }
     });
 
