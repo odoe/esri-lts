@@ -1,0 +1,1 @@
+Demos used for the [Discover the Next-Generation ArcGIS API 4 for JavaScript](http://training.esri.com/gateway/index.cfm?fa=catalog.webCourseDetail&courseid=3059) live training seminar.
